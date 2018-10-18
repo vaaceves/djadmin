@@ -20,7 +20,7 @@ class Visitor(models.Model):
     """
     It will store information about user when logged in using django admin
     """
-    name = models.ForeignKey(AUTH_USER_MODEL, verbose_name=_('User'), null=True)
+    name = models.ForeignKey(AUTH_USER_MODEL, verbose_name=_('User'), null=True, on_delete=models.CASCADE)
     city = models.CharField(_('City'), max_length=255, null=True)
     state = models.CharField(_('State'), max_length=50, null=True)
     country = models.CharField(_('Country'), max_length=50, null=True)
